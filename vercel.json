@@ -1,9 +1,21 @@
 {
   "version": 2,
-  "builds": [
+  "routes": [
     {
-      "src": "package.json",
-      "use": "@vercel/node"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "status": 200
     }
   ]
 } 
