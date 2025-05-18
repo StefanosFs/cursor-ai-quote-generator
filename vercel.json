@@ -1,11 +1,22 @@
 {
   "version": 2,
-  "public": true,
-  "builds": [
+  "framework": "create-react-app",
+  "routes": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "zeroConfig": true }
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 } 
